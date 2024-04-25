@@ -1,13 +1,21 @@
 import './App.css'
 
+import { QuestionContainer } from './components/questionContainer/QuestionContainer'
+import { ScoreBoard } from './components/scoreBoard/ScoreBoard'
+import { Questions } from './database/db'
+
 function App() {
 
+  let question = Questions[2];
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
+    <div>
+      <QuestionContainer 
+        id={question.id}
+        author={question.author}
+        text={question.text} 
+        answers={question.answers} />
+      <ScoreBoard/>
+    </div>
   )
 }
 
