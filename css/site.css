@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(135deg, #0d1547 0%, #090F31 70%, #02040e 100%), url("http://1.bp.blogspot.com/-p0s06MBIx_U/T8zKIBZ24pI/AAAAAAA7Y/n8hMZfpRic0/s1600/dark+blue+wallpaper+10.jpg");
+    background-image: linear-gradient(135deg, #13285b 0%, #0a1744 70%, #02010c 100%);
     background-attachment: fixed;
     background-size: cover;
     background-color: #c0caca;
@@ -306,4 +306,14 @@ body {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+@keyframes checkAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.checking {
+    animation: checkAnimation 0.5s ease;
 }

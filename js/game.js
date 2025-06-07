@@ -9,6 +9,8 @@ const answeredQuestionsIds = [];
 let questionsCount = 0;
 let actualQuestionId = 0;
 
+let answerLocked = false;
+
 let timeout = 2000;
 
 // Game code
@@ -124,6 +126,7 @@ function getNextQuestion(){
 };
 
 function showQuestOnScreen(questionId) {
+    answerLocked = false;
     const answersOrder = orderAnswers();
     const questionText = questions[questionId]["question"];
     const answerA =      questions[questionId]["answer_" + answersOrder[0]]
@@ -170,21 +173,29 @@ function resetAnswersHTML() {
     $("#answer_a").children(".answer_center")
         .removeClass("good_answer")
         .removeClass("wrong_answer")
+        .removeClass("checking")
+        .css("cursor","pointer")
         .unbind()
         .html("");
     $("#answer_b").children(".answer_center")
         .removeClass("good_answer")
         .removeClass("wrong_answer")
+        .removeClass("checking")
+        .css("cursor","pointer")
         .unbind()
         .html("");
     $("#answer_c").children(".answer_center")
         .removeClass("good_answer")
         .removeClass("wrong_answer")
+        .removeClass("checking")
+        .css("cursor","pointer")
         .unbind()
         .html("");
     $("#answer_d").children(".answer_center")
         .removeClass("good_answer")
         .removeClass("wrong_answer")
+        .removeClass("checking")
+        .css("cursor","pointer")
         .unbind()
         .html("");
 };
@@ -194,6 +205,9 @@ function disableAllAnswers() {
 }
 
 function goodAnswer(answerBtn) {
+    if(answerLocked) { return; }
+    answerLocked = true;
+    $(answerBtn).addClass("checking");
     if (debug) { console.log("goodAnswer"); }
     disableAllAnswers();
     setButtonColor(answerBtn,"goldenrod");
@@ -202,6 +216,7 @@ function goodAnswer(answerBtn) {
         checkScore();
         setTimeout(function(){
             question_number++;
+            $(answerBtn).removeClass("checking");
             resetButtonColor(answerBtn);
             if(question_number<13)
             {
@@ -215,6 +230,9 @@ function goodAnswer(answerBtn) {
 };
 
 function wrongAnswer(answerBtn) {
+    if(answerLocked) { return; }
+    answerLocked = true;
+    $(answerBtn).addClass("checking");
     if (debug) { console.log("wrongAnswer"); }
     disableAllAnswers();
     setButtonColor(answerBtn,"goldenrod");
@@ -222,6 +240,8 @@ function wrongAnswer(answerBtn) {
         setButtonColor(answerBtn,"red");
         setButtonColor($(".good_answer"),"green");
         setTimeout(function(){
+            $(answerBtn).removeClass("checking");
+            $(".good_answer").removeClass("checking");
             resetButtonColor(answerBtn);
             resetButtonColor($(".good_answer"));
             loseGame();
