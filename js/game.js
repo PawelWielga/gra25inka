@@ -189,8 +189,13 @@ function resetAnswersHTML() {
         .html("");
 };
 
+function disableAllAnswers() {
+    $(".answer_center").off("click").css("cursor","default");
+}
+
 function goodAnswer(answerBtn) {
     if (debug) { console.log("goodAnswer"); }
+    disableAllAnswers();
     setButtonColor(answerBtn,"goldenrod");
     setTimeout(function(){
         setButtonColor(answerBtn,"green");
@@ -211,6 +216,7 @@ function goodAnswer(answerBtn) {
 
 function wrongAnswer(answerBtn) {
     if (debug) { console.log("wrongAnswer"); }
+    disableAllAnswers();
     setButtonColor(answerBtn,"goldenrod");
     setTimeout(function(){
         setButtonColor(answerBtn,"red");
