@@ -1,0 +1,263 @@
+body {
+    background-image: url("http://1.bp.blogspot.com/-p0s06MBIx_U/T8zKIBZ24pI/AAAAAAAAA7Y/n8hMZfpRic0/s1600/dark+blue+wallpaper+10.jpg");
+    background-color: #c0caca;
+}
+
+#header {
+    color: white;
+    width: 800px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 40px;
+}
+
+#content {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#game {
+    height: 500px;
+}
+
+#score {
+    margin-top: 10px;
+    height: 500px;
+}
+
+#question {
+    padding: 10px;
+    height: calc(100% - 130px);
+}
+
+#answers {
+    padding: 10px;
+}
+
+.answer {
+    cursor: pointer;
+}
+
+.answer:hover .answer_center {
+    background-color: #02040e;
+}
+
+.answer:hover .answer_left {
+    border-right:15px solid #02040e; 
+}
+
+.answer:hover .answer_right {
+    border-left: 15px solid #02040e;
+}
+
+.answer_center {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    line-height: 50px;
+    width: calc(100% - 30px);
+    height: 50px;
+    float: left;
+    background-color: #090F31;
+}
+
+.answer_left {
+    width: 0; 
+    height: 0;
+    float: left;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent; 
+    border-right:15px solid #090F31; 
+}
+
+.answer_right {
+    width: 0; 
+    height: 0; 
+    float: left;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 15px solid #090F31;
+}
+
+.answers_horizontal_separator {
+    height: 10px;
+}
+
+#question_number_left {
+    width: 0; 
+    height: 0;
+    float: left;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent; 
+    border-right:15px solid #090F31; 
+}
+
+#question_number_right {
+    width: 0; 
+    height: 0; 
+    float: left;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 15px solid #090F31;
+}
+
+#question_number_center {
+    font-size: 28px;
+    color: green;
+    text-align: center;
+    vertical-align: center;
+    line-height: 70px;
+    width: calc(100% - 30px);
+    height: 70px;
+    float: left;
+    background-color: #090F31;
+}
+
+#question_text {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    height: 280px;
+    margin-top: 80px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 20px;
+    background-color: #090F31;
+}
+
+.lifebelt {
+    visibility: hidden;
+    cursor: pointer;
+    height: 70px;
+    text-align: center;
+    vertical-align: center;
+    line-height: 70px;
+    font-size: 20px;
+}
+
+.lifebelt:hover {
+    color: green;
+}
+
+#lifebelts_left {
+    width: 0; 
+    height: 0;
+    float: left;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent; 
+    border-right:15px solid #090F31; 
+}
+
+#lifebelts_right {
+    width: 0; 
+    height: 0; 
+    float: left;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 15px solid #090F31;
+}
+
+#lifebelts_center {
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    line-height: 70px;
+    width: calc(100% - 30px);
+    height: 70px;
+    float: left;
+    background-color: #090F31;
+}
+
+#points {
+    height: 400px;
+    background-color: #090F31;
+    margin-top: 80px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.points_step {
+    height: 32px;
+    padding-top: 8px;
+}
+
+.point_symbol {
+    -webkit-transform: rotate(45deg); /* Safari and Chrome */
+    -moz-transform: rotate(45deg);   /* Firefox */
+    -ms-transform: rotate(45deg);   /* IE 9 */
+    -o-transform: rotate(45deg);   /* Opera */
+    transform: rotate(45deg);
+    width: 16px;
+    height: 16px;
+    border: 3px solid;
+    float: left;
+}
+
+.point_normal {
+    border-color: white;
+}
+
+.point_gold {
+    border-color: gold;
+}
+
+.point_answered {
+    background-color: goldenrod;
+}
+
+.point_value {
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-right: 10px;
+}
+
+#next_button {
+    color: white;
+    text-align: right;
+    vertical-align: center;
+    line-height: 30px;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    bottom: 140px;
+    right: 35px;
+    cursor: pointer;
+}
+
+#next_button:hover {
+    color: green;
+}
+
+#footer{
+    color: white;
+    text-align: right;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+}
+
+#PW {
+    font-weight: bolder;
+}
+
+.green {
+    color: green;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
