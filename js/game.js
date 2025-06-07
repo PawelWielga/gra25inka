@@ -1,20 +1,22 @@
+"use strict";
+
 // Variables
-var debug = false;
-var question_number = 1;
-var questions = [];
-var answeredQuestionsIds = [];
+const debug = false;
+let question_number = 1;
+let questions = [];
+const answeredQuestionsIds = [];
 
-var questionsCount = 0;
-var actualQuestionId = 0;
+let questionsCount = 0;
+let actualQuestionId = 0;
 
-var timeout = 2000;
+let timeout = 2000;
 
 // Game code
-$(document).ready(function () {
+$(document).ready(() => {
     if(debug) {timeout = 10;}
 
     // Parse questions from JSON
-    var parsedJSON = JSON.parse(questionsJSON);
+    const parsedJSON = JSON.parse(questionsJSON);
     questions = parsedJSON["questions"];
     questionsCount = questions.length
 
@@ -83,9 +85,9 @@ function checkCorrectAnswer() {
 }
 
 function hideTwoWrongAnswers() {
-    var date = new Date();
-    var time = date.getTime();  
-    var from = time%2;
+    const date = new Date();
+    const time = date.getTime();
+    const from = time%2;
 
     if (from === 1) {
         $(".wrong_answer:eq(0)")
@@ -111,35 +113,10 @@ function startGame() {
     showQuestOnScreen(actualQuestionId);
 }
 
-var contains = function(needle) {
-    var findNaN = needle !== needle;
-    var indexOf;
-
-    if(!findNaN && typeof Array.prototype.indexOf === 'function') {
-        indexOf = Array.prototype.indexOf;
-    } else {
-        indexOf = function(needle) {
-            var i = -1, index = -1;
-
-            for(i = 0; i < this.length; i++) {
-                var item = this[i];
-
-                if((findNaN && item !== item) || item === needle) {
-                    index = i;
-                    break;
-                }
-            }
-
-            return index;
-        };
-    }
-
-    return indexOf.call(this, needle) > -1;
-};
 
 function getNextQuestion(){
-    var id = Math.floor(Math.random() * questionsCount);
-    while (contains.call(answeredQuestionsIds,id)){
+    let id = Math.floor(Math.random() * questionsCount);
+    while (answeredQuestionsIds.includes(id)){
         id = Math.floor(Math.random() * questionsCount);
     }
     answeredQuestionsIds.push(id);
@@ -147,12 +124,12 @@ function getNextQuestion(){
 };
 
 function showQuestOnScreen(questionId) {
-    var answersOrder = orderAnswers();
-    var questionText = questions[questionId]["question"];
-    var answerA =      questions[questionId]["answer_" + answersOrder[0]]
-    var answerB =      questions[questionId]["answer_" + answersOrder[1]]
-    var answerC =      questions[questionId]["answer_" + answersOrder[2]]
-    var answerD =      questions[questionId]["answer_" + answersOrder[3]]
+    const answersOrder = orderAnswers();
+    const questionText = questions[questionId]["question"];
+    const answerA =      questions[questionId]["answer_" + answersOrder[0]]
+    const answerB =      questions[questionId]["answer_" + answersOrder[1]]
+    const answerC =      questions[questionId]["answer_" + answersOrder[2]]
+    const answerD =      questions[questionId]["answer_" + answersOrder[3]]
 
     $("#question_number_center").html("Pytanie " + question_number);
     $("#question_text").html(questionText);
@@ -267,7 +244,7 @@ function loseGame() {
     if (debug) { console.log("loseGame"); }
     $("#question_number_center").html("Koniec Gry");
     resetAnswersHTML();
-    var points = "0";
+    let points = "0";
     if(question_number >= 3 && question_number < 8) { points = "1.000"; }
     else if(question_number >= 8) {points = "40.000"; }
     $("#question_text").html("Niestety nie udało Ci się odpowiedzieć na wszystkie pytania. Zdobyłaś <span class='green'>"+ points +"</span> całusów <span class='glyphicon glyphicon-heart green'></span>");
@@ -304,10 +281,10 @@ function nextGame() {
 }
 
 function orderAnswers() {
-    var nums = [0,1,2,3];
-    var ranNums = [];
-    var i = nums.length;
-    var j = 0;
+    const nums = [0,1,2,3];
+    const ranNums = [];
+    let i = nums.length;
+    let j = 0;
 
     while (i--) {
     j = Math.floor(Math.random() * (i+1));
@@ -321,7 +298,7 @@ function orderAnswers() {
 
 // Data
 // Answer 0 => good answer
-var questionsJSON = "{"+
+const questionsJSON = "{"+
                     "   \"questions\": ["+
                     "       {"+
                     "           \"id\" : 1,"+
