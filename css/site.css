@@ -5,7 +5,8 @@ body {
 
 #header {
     color: white;
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -14,7 +15,8 @@ body {
 }
 
 #content {
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -238,7 +240,8 @@ body {
 #footer{
     color: white;
     text-align: right;
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-right: 30px;
@@ -246,6 +249,23 @@ body {
 
 #PW {
     font-weight: bolder;
+}
+
+@media (max-width: 767px) {
+    #game,
+    #score {
+        height: auto;
+    }
+
+    #question {
+        height: auto;
+    }
+
+    #next_button {
+        position: static;
+        margin-top: 10px;
+        text-align: center;
+    }
 }
 
 .green {
