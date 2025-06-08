@@ -186,3 +186,5 @@ const questionsJSON = "{"+
                     "       }"+
                     "   ]"+
                     "}";
+
+window.questionsJSON = questionsJSON;
