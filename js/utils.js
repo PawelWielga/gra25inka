@@ -26,3 +26,7 @@ function resetButtonColor(button) {
     $(button).parent().children(".answer_left").css("border-right-color","");
     $(button).parent().children(".answer_right").css("border-left-color","");
 }
+
+window.orderAnswers = orderAnswers;
+window.setButtonColor = setButtonColor;
+window.resetButtonColor = resetButtonColor;
