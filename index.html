@@ -19,20 +19,20 @@
 </head>
 
 <body class="noselect">
-    <div id="header"><div class="glyphicon glyphicon-gift"></div> Urodzinowi milionerzy <div class="glyphicon glyphicon-gift"></div></div>
+    <header id="header"><div class="glyphicon glyphicon-gift"></div> Urodzinowi milionerzy <div class="glyphicon glyphicon-gift"></div></header>
 
-    <div id="content" class="row">
-        <div id="game" class="col-xs-12 col-sm-8">
-            <div id="question" class="row">
-                <div id="question_number">
-                    <div id="question_number_left"></div>
-                    <div id="question_number_center"></div>
-                    <div id="question_number_right"></div>
-                </div>
+    <content id="content" class="row" direction="row">
+        <left-panel id="game" class="col-xs-12 col-sm-8" direction="column">
+            <question-number id="question_number">
+                <div id="question_number_left"></div>
+                <div id="question_number_center"></div>
+                <div id="question_number_right"></div>
+            </question-number>
+            <question id="question" class="row">
                 <div id="question_text"></div>
                 <div id="next_button">Dalej<p class="glyphicon glyphicon-chevron-right"></p></div>
-            </div>
-            <div id="answers" class="row">
+            </question>
+            <answers id="answers" class="row">
                 <div class="row">
                     <div id="answer_a" class="answer col-xs-6">
                         <div class="answer_left"></div>
@@ -56,13 +56,13 @@
                         <div class="answer_left"></div>
                         <div class="answer_center"></div>
                         <div class="answer_right"></div>
-                    </div> 
-                </div>             
-            </div>
-        </div>
+                    </div>
+                </div>
+            </answers>
+        </left-panel>
 
-        <div id="score" class="col-xs-12 col-sm-4">
-            <div id="lifebelts">
+        <right-panel id="score" class="col-xs-12 col-sm-4" direction="column">
+            <lifebelts id="lifebelts">
                 <div id="lifebelts_left"></div>
                 <div id="lifebelts_center">
                     <div id="lifebelt_5050" class="lifebelt glyphicon glyphicon-eye-close col-xs-6" title="50:50"></div>
@@ -70,8 +70,8 @@
                     <!-- <div id="lifebelt_friend" class="lifebelt glyphicon glyphicon-earphone col-xs-4"></div> -->
                 </div>
                 <div id="lifebelts_right"></div>
-            </div>
-            <div id="points">
+            </lifebelts>
+            <scoreboard id="points">
                 <div id="point_step_12" class="points_step">
                     <div class="point_symbol point_gold"></div>
                     <div class="point_value">1.000.000</div>
@@ -120,11 +120,11 @@
                     <div class="point_symbol point_normal"></div>
                     <div class="point_value">500</div>
                 </div>
-            </div>
-        </div>
-    </div>    
+            </scoreboard>
+        </right-panel>
+    </content>
 
-    <div id="footer">Programmed by <span id="PW">Paweł Wielga</span> &copy;</div>
+    <footer id="footer">Programmed by <span id="PW">Paweł Wielga</span> &copy;</footer>
 </body>
 
 </html>
