@@ -30,14 +30,14 @@ body {
 
 #game {
     height: 500px;
-    background-color: rgba(9, 15, 49, 0.8);
+    background-color: rgba(16, 32, 74, 0.95);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 #score {
     margin-top: 10px;
     height: 500px;
-    background-color: rgba(9, 15, 49, 0.8);
+    background-color: rgba(16, 32, 74, 0.95);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -55,15 +55,15 @@ body {
 }
 
 .answer:hover .answer_center {
-    background-color: #061b39;
+    background-color: #162c5f;
 }
 
 .answer:hover .answer_left {
-    border-right:15px solid #061b39;
+    border-right:15px solid #162c5f;
 }
 
 .answer:hover .answer_right {
-    border-left: 15px solid #061b39;
+    border-left: 15px solid #162c5f;
 }
 
 .answer_center {
@@ -75,7 +75,7 @@ body {
     width: calc(100% - 30px);
     height: 50px;
     float: left;
-    background-color: #090F31;
+    background-color: #10204a;
     transition: background-color 0.3s ease;
 }
 
@@ -85,7 +85,7 @@ body {
     float: left;
     border-top: 25px solid transparent;
     border-bottom: 25px solid transparent;
-    border-right:15px solid #090F31;
+    border-right:15px solid #10204a;
     transition: border-color 0.3s ease;
 }
 
@@ -95,7 +95,7 @@ body {
     float: left;
     border-top: 25px solid transparent;
     border-bottom: 25px solid transparent;
-    border-left: 15px solid #090F31;
+    border-left: 15px solid #10204a;
     transition: border-color 0.3s ease;
 }
 
@@ -109,7 +109,7 @@ body {
     float: left;
     border-top: 35px solid transparent;
     border-bottom: 35px solid transparent; 
-    border-right:15px solid #090F31; 
+    border-right:15px solid #10204a; 
 }
 
 #question_number_right {
@@ -118,7 +118,7 @@ body {
     float: left;
     border-top: 35px solid transparent;
     border-bottom: 35px solid transparent;
-    border-left: 15px solid #090F31;
+    border-left: 15px solid #10204a;
 }
 
 #question_number_center {
@@ -130,7 +130,7 @@ body {
     width: calc(100% - 30px);
     height: 70px;
     float: left;
-    background-color: #090F31;
+    background-color: #10204a;
     text-shadow: 0 0 6px rgba(0,0,0,0.5);
 }
 
@@ -143,7 +143,7 @@ body {
     margin-left: 15px;
     margin-right: 15px;
     padding: 20px;
-    background-color: #090F31;
+    background-color: #10204a;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -168,7 +168,7 @@ body {
     float: left;
     border-top: 35px solid transparent;
     border-bottom: 35px solid transparent; 
-    border-right:15px solid #090F31; 
+    border-right:15px solid #10204a; 
 }
 
 #lifebelts_right {
@@ -177,7 +177,7 @@ body {
     float: left;
     border-top: 35px solid transparent;
     border-bottom: 35px solid transparent;
-    border-left: 15px solid #090F31;
+    border-left: 15px solid #10204a;
 }
 
 #lifebelts_center {
@@ -188,13 +188,13 @@ body {
     width: calc(100% - 30px);
     height: 70px;
     float: left;
-    background-color: #090F31;
+    background-color: #10204a;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
 #points {
     height: 400px;
-    background-color: #090F31;
+    background-color: #10204a;
     margin-top: 80px;
     margin-left: 15px;
     margin-right: 15px;
@@ -307,6 +307,13 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+@media (min-width: 768px) {
+    #score {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+}
+
 
 @keyframes checkAnimation {
     0% { transform: scale(1); }
