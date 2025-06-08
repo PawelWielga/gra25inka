@@ -7,6 +7,27 @@ body {
     color: #fff;
 }
 
+/* layout for custom tags */
+content[direction="row"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+left-panel[direction="column"],
+right-panel[direction="column"] {
+    display: flex;
+    flex-direction: column;
+}
+
+question-number,
+question,
+answers,
+lifebelts,
+scoreboard {
+    display: block;
+}
+
 #header {
     color: white;
     max-width: 800px;
